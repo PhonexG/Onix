@@ -1,0 +1,41 @@
+# CMake building directory
+build/
+cmake-build-*/
+out/
+
+# CMake cache and logs
+CMakeCache.txt
+CMakeFiles/
+CTestTestfile.cmake
+Testing/
+Makefile
+*.ninja
+.ninja_*
+
+# Artifacts from compilation and binaries
+*.o
+*.obj
+*.so
+*.dylib
+*.a
+bin/
+lib/
+onix
+onix_tests
+
+# Nix results and logs
+result
+result-*
+.direnv/
+
+# Editors and IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+compile_commands.json
+.cache/
+.clangd/
+
+*.md
