@@ -32,9 +32,12 @@ endif()
 include_directories(include)
 
 # Editor core
-add_library(onix_core INTERFACE)
-target_include_directories(onix_core INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(onix_core INTERFACE onix_compile_options)
+# Editor core
+add_library(onix_core STATIC
+    src/core/PieceTable.cpp
+)
+target_include_directories(onix_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(onix_core PUBLIC onix_compile_options)
 
 # Enabling testing
 enable_testing()
