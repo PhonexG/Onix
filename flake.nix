@@ -35,7 +35,7 @@
           ];
 
           shellHook = ''
-            echo "⚡ Onix C++20 dev environment loaded!"
+            echo "Onix C++20 dev environment loaded!"
             echo "Compiler: $($CXX --version | head -n 1)"
           '';
         };
