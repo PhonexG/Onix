@@ -42,5 +42,3 @@ compile_commands.json
 .clangd/
 
 *.md
-*.lock
-*.nix
