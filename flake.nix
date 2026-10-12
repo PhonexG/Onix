@@ -32,10 +32,18 @@
 
             # supportedSystems
             catch2_3
+
           ];
 
           shellHook = ''
-            echo "⚡ Onix C++20 dev environment loaded!"
+            # Automatically keep compile_commands.json synced for clangd / Zed
+            if [ ! -f "build/compile_commands.json" ]; then
+              cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON >/dev/null 2>&1 || true
+            fi
+            if [ -f "build/compile_commands.json" ] && [ ! -e "compile_commands.json" ]; then
+              ln -sf build/compile_commands.json compile_commands.json
+            fi
+            echo "Onix C++20 dev environment loaded!"
             echo "Compiler: $($CXX --version | head -n 1)"
           '';
         };

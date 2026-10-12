@@ -1,3 +1,6 @@
+build/
+.cache/
+.direnv/
 # CMake building directory
 build/
 cmake-build-*/

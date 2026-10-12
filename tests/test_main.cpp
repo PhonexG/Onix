@@ -18,3 +18,37 @@ TEST_CASE("PieceTable - Initial text buffer", "[core][piecetable]") {
     REQUIRE(pt.size() == 12);
     REQUIRE(pt.get_text() == "Hello world!");    
 }
+
+TEST_CASE("PieceTable - Insert operations", "[core][piecetable]") {
+    SECTION("Insert into empty buffer") {
+        PieceTable pt;
+        pt.insert(0, "Hello");
+
+        REQUIRE(pt.size() == 5);
+        REQUIRE(pt.get_text() == "Hello");
+    }
+
+    SECTION("Insert at the end (append)") {
+        PieceTable pt{"Hello"};
+        pt.insert(5, " World");
+
+        REQUIRE(pt.size() == 11);
+        REQUIRE(pt.get_text() == "Hello World");
+    }
+
+    SECTION("Insert at the beginning (prepend)") {
+        PieceTable pt{"World"};
+        pt.insert(0, "Hello ");
+
+        REQUIRE(pt.size() == 11);
+        REQUIRE(pt.get_text() == "Hello World");
+    }
+
+    SECTION("Insert in the middle (split piece)") {
+        PieceTable pt{"HelloWorld"};
+        pt.insert(5, " Beautiful ");
+
+        REQUIRE(pt.size() == 21);
+        REQUIRE(pt.get_text() == "Hello Beautiful World");
+    }
+}
