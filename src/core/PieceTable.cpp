@@ -1,5 +1,4 @@
 #include <cstddef>
-#include <numbers>
 #include <onix/core/PieceTable.hpp>
 #include <stdexcept>
 #include <string>
