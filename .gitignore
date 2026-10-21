@@ -1,12 +1,9 @@
-build/
-.cache/
-.direnv/
-# CMake building directory
+# CMake build output
 build/
 cmake-build-*/
 out/
 
-# CMake cache and logs
+# CMake cache and temporary files
 CMakeCache.txt
 CMakeFiles/
 CTestTestfile.cmake
@@ -14,8 +11,9 @@ Testing/
 Makefile
 *.ninja
 .ninja_*
+compile_commands.json
 
-# Artifacts from compilation and binaries
+# Compilation artifacts
 *.o
 *.obj
 *.so
@@ -23,22 +21,23 @@ Makefile
 *.a
 bin/
 lib/
-onix
-onix_tests
 
-# Nix results and logs
+# Executables in root
+/onix
+/onix_tests
+
+# Nix
 result
 result-*
 .direnv/
 
-# Editors and IDE
+# IDE & Caches
+.cache/
+.clangd/
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
-compile_commands.json
-.cache/
-.clangd/
 
-*.md
+/context
